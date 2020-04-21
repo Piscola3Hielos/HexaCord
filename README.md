@@ -6,6 +6,12 @@ BungeeCord for 1.7/1.8/1.9/1.10/1.11/1.12/1.13/1.14/1.15
 This is a fork of md_5's BungeeCord  
 https://www.spigotmc.org/threads/1-8-1-9-bungeecord.392/
 
+### Known issues
+* A memory leak reported through [this issue](https://github.com/SpigotMC/BungeeCord/issues/2583) over at BungeeCoord's mainstream repository causes a persistent growth of the ram usage, which rockets way over `-Xmx`'s limit clause.
+
+  * Solution: A quick workaround, through one JVM argument: `-Dio.netty.allocator.numHeapArenas=0`
+ 
+
 This version reimplements Minecraft 1.7.10 and basic 1.7.10 Forge support.
 
 Since release 134+, SpongePls is no longer needed when using Sponge-servers within your network!
